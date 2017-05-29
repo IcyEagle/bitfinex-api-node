@@ -25,7 +25,7 @@ rest.prototype.make_request = function (path, params, cb) {
   url = `${this.url}/${this.version}/${path}`
   nonce = JSON.stringify(this._nonce())
   payload = {
-    request: path,
+    request: `/${this.version}/${path}`,
     nonce
   }
   for (key in params) {
